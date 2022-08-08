@@ -28,11 +28,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $user = null;
+    // #[ORM\Column(length: 255)]
+    // private ?string $user = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $interrupt = null;
+    // #[ORM\Column(length: 255)]
+    // private ?string $interrupt = null;
 
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
@@ -119,29 +119,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getUser(): ?string
-    {
-        return $this->user;
-    }
+    // public function getUser(): ?string
+    // {
+    //     return $this->user;
+    // }
 
-    public function setUser(string $user): self
-    {
-        $this->user = $user;
+    // public function setUser(string $user): self
+    // {
+    //     $this->user = $user;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function getInterrupt(): ?string
-    {
-        return $this->interrupt;
-    }
+    // public function getInterrupt(): ?string
+    // {
+    //     return $this->interrupt;
+    // }
 
-    public function setInterrupt(string $interrupt): self
-    {
-        $this->interrupt = $interrupt;
+    // public function setInterrupt(string $interrupt): self
+    // {
+    //     $this->interrupt = $interrupt;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getPrenom(): ?string
     {
