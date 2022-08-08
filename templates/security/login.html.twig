@@ -1,0 +1,52 @@
+
+
+{% block title %}  {% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+     <div class="toto">
+    <h1 class="h3 mb-3 font-weight-normal">Ouvrir Une Session</h1>
+    <h4> Administration du site internet </h4>
+    <label for="inputEmail">Email</label> <br>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus> <br>
+    <label for="inputPassword">Password</label> <br>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required> <br>
+    
+    <!... button ...>
+    <a class="navbar-btn btn btn-primary lift ms-auto" href='#'>Ouvrir Une Session</a>
+    </div>
+       <img class="tata" src="{{asset ('assets/images/cover-8.jpg')}} " alt="" width="440" height="440">
+    
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+<style>
+
+.toto{
+     text-align:center;
+    display: flex;
+    flex-direction: Column;
+    justify-content:center;
+    align-items:center;
+    position: absolute;
+ }
+.tata{
+    margin-left: 1000px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+</style>
+  
+</form>
+{% endblock %}
