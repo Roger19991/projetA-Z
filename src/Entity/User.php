@@ -28,11 +28,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    // #[ORM\Column(length: 255)]
-    // private ?string $user = null;
-
-    // #[ORM\Column(length: 255)]
-    // private ?string $interrupt = null;
+    
 
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
@@ -118,31 +114,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
-
-    // public function getUser(): ?string
-    // {
-    //     return $this->user;
-    // }
-
-    // public function setUser(string $user): self
-    // {
-    //     $this->user = $user;
-
-    //     return $this;
-    // }
-
-    // public function getInterrupt(): ?string
-    // {
-    //     return $this->interrupt;
-    // }
-
-    // public function setInterrupt(string $interrupt): self
-    // {
-    //     $this->interrupt = $interrupt;
-
-    //     return $this;
-    // }
-
     public function getPrenom(): ?string
     {
         return $this->prenom;

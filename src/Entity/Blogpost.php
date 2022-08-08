@@ -25,8 +25,8 @@ class Blogpost
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createAt = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $createAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'blogposts')]
     #[ORM\JoinColumn(nullable: false)]
@@ -81,12 +81,12 @@ class Blogpost
         return $this;
     }
 
-    public function getCreateAt(): ?\DateTimeImmutable
+    public function getCreateAt(): ?\DateTimeInterface
     {
         return $this->createAt;
     }
 
-    public function setCreateAt(\DateTimeImmutable $createAt): self
+    public function setCreateAt(\DateTimeInterface $createAt): self
     {
         $this->createAt = $createAt;
 
