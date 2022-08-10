@@ -32,9 +32,9 @@ class AppFixtures extends Fixture
         $faker = Factory::create('fr_FR'); 
 
         //creation d'un utilisateur
-        $User = new User();
+        $user = new User();
 
-        $User->setEmail('User@test.com')
+        $user->setEmail('User@test.com')
              ->setPrenom($faker->firstName())
              ->setNom($faker->lastName())
              ->setTelephone($faker->phoneNumber())
@@ -44,10 +44,10 @@ class AppFixtures extends Fixture
              ->setInstagram('instagram');
 
 
-        $password = $this->encoder->hashPassword($User, 'password');
-        $User->setpassword($password);
+        $password = $this->encoder->hashPassword($user, 'password');
+        $user->setpassword($password);
 
-       $manager->persist($User);
+       $manager->persist($user);
 
        //creation de 10 blogpost
        for ($i=0; $i < 10; $i++) { 
@@ -58,7 +58,7 @@ class AppFixtures extends Fixture
                  ->setCreateAt($faker->dateTimeBetween('-6 month', 'now'))
                  ->setContenu($faker->Text(350))
                  ->setSlug($faker->slug(3))
-                 ->setUser($User);
+                 ->setUser($user);
 
         $manager->persist($Blogpost);
 
@@ -92,7 +92,7 @@ class AppFixtures extends Fixture
                 ->setFile('/img/placeholder.jpg')
                 ->addCategorie($categorie)
                 ->setprix($faker->randomFloat(2, 100, 9999))
-                ->setUser($User);
+                ->setUser($user);
 
             }
 

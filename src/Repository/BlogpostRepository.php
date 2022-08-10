@@ -39,6 +39,19 @@ class BlogpostRepository extends ServiceEntityRepository
         }
     }
 
+     /**
+      *@return peinture[] return peinture[] returns an array of peinture objects
+      */
+      public function lastTree()
+      {
+        return $this->createQueryBuilder('p')
+        ->orderBy('p.id', 'DESC')
+        ->setMaxResults(3)
+        ->getQuery()
+        ->getResult()
+        ;
+      }
+
 //    /**
 //     * @return Blogpost[] Returns an array of Blogpost objects
 //     */
