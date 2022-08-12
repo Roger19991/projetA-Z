@@ -207,9 +207,9 @@ class Peinture
         return $this->user;
     }
 
-    public function setUser(?User $user): self
+    public function setUser(?User $User): self
     {
-        $this->user = $user;
+        $this->user = $User;
 
         return $this;
     }

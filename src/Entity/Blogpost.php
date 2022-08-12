@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\BlogpostRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\User;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\BlogpostRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: BlogpostRepository::class)]
 class Blogpost
@@ -30,7 +31,7 @@ class Blogpost
 
     #[ORM\ManyToOne(inversedBy: 'blogposts')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $user = null;
+    private ?User $User = null;
 
     #[ORM\OneToMany(mappedBy: 'blogpost', targetEntity: Commentaire::class)]
     private Collection $commentaires;
@@ -93,14 +94,14 @@ class Blogpost
         return $this;
     }
 
-    public function getUser(): ?user
+    public function getUser(): ?User
     {
-        return $this->user;
+        return $this->User;
     }
 
-    public function setUser(?user $user): self
+    public function setUser(?User $User): self
     {
-        $this->user = $user;
+        $this->User = $User;
 
         return $this;
     }
