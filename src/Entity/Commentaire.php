@@ -27,10 +27,10 @@ class Commentaire
     private ?\DateTimeInterface $date = null;
 
     #[ORM\ManyToOne(inversedBy: 'commentaires')]
-    private ?peinture $peinture = null;
+    private ?Peinture $peinture = null;
 
     #[ORM\ManyToOne(inversedBy: 'commentaires')]
-    private ?blogpost $blogpost = null;
+    private ?Blogpost $blogpost = null;
 
     public function getId(): ?int
     {

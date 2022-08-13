@@ -41,11 +41,15 @@
         
 
         </p>
+        {% for peinture in peintures %}
+          
+        
 
         <p>
+
             <time datetime="2019-05-29">Ajoutée le {{peinture.createAt|date('d/m/y')}}
         </p>
-    
+    {% endfor %}
     </div>
   </div>
 </div>

@@ -3,6 +3,8 @@
 {% block title %}Hello PeintureController!{% endblock %}
 
 {% block body %}
-{% for peinture in peintures %}
+{% for peinture in peinture %}
    <p> {{ peinture.nom}}</p>
+   {% endfor %}
 {% endblock %}
+

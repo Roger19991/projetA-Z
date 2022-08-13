@@ -13,7 +13,7 @@ class PeintureController extends AbstractController
     public function realisations(PeintureRepository $peintureRepository): Response
     {
         return $this->render('peinture/realisations.html.twig', [
-            'peintures_name' => $peintureRepository->findAll(),
+            'peinture' => $peintureRepository->findAll(),
         ]);
     }
 }
